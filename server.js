@@ -29,13 +29,13 @@ const auth = passport.authenticate('local', {session: true})
 
 
 const personRoutes = require('./routes/person_routes');
-app.use('/person', auth , personRoutes)
+app.use('/person' , personRoutes)
 const menuItemRoutes = require('./routes/menu_item_routes');
 // const person = require('./models/person');
 app.use('/menu_item', menuItemRoutes);
 
 
-app.get('/',auth, function (req, res) {
+app.get('/', function (req, res) {
     res.send("welcome")
 })
 
